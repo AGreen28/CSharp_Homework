@@ -4,7 +4,6 @@
 a = 5; b = 7 -> max = 7
 a = 2 b = 10 -> max = 10
 a = -9 b = -3 -> max = -3
-*/
 
 Console.Write("Введите первое число: ");
 int a = Convert.ToInt32(Console.ReadLine());
@@ -19,6 +18,7 @@ else
 {
     Console.WriteLine("Больше число " + b);
 }
+*/
 
 /*
 Задача 2: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
@@ -27,6 +27,19 @@ else
 44 5 78 -> 78
 22 3 9 -> 22
 */
+
+Console.Write("Введите первое число: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите третье число: ");
+int c = Convert.ToInt32(Console.ReadLine());
+int max = a;
+
+if (b > max) max = b;
+if (c > max) max = c;
+
+Console.WriteLine("Больше число " + max);
 
 /*
 Задача 3: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
