@@ -5,7 +5,7 @@
 456 -> 5
 782 -> 8
 918 -> 1
-*/
+
 
 void SecondNumber(int num)
 {
@@ -19,6 +19,7 @@ void SecondNumber(int num)
 Console.Write("Введите трёхзначное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 SecondNumber(num);
+*/
 
 /*
 Задача 13: Напишите программу, которая выводит третью цифру заданного числа
@@ -29,7 +30,35 @@ SecondNumber(num);
 78 -> третьей цифры нет
 
 32679 -> 6
+*/
 
+void ThirdNumber(int num)
+{
+    int length = 0;
+    int num2 = num;
+    while(num > 0)
+    {
+        num = num / 10;
+        length++;
+    }
+
+    int stepen = length - 3;
+    if(stepen < 0)
+    {
+        Console.Write("Третьей цифры нет!");
+    }
+    else
+    {
+        int thirdnum = (num2 / Convert.ToInt32(Math.Pow(10, stepen))) % 10;
+        Console.Write(thirdnum);
+    }
+}
+
+Console.Write("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+ThirdNumber(num);
+
+/*
 Задача 15: Напишите программу, которая принимает на вход цифру,
 обозначающую день недели, и проверяет, является ли этот день выходным.
 
