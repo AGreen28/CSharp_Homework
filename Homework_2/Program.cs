@@ -30,7 +30,7 @@ SecondNumber(num);
 78 -> третьей цифры нет
 
 32679 -> 6
-
+*/
 
 void ThirdNumber(int num)
 {
@@ -42,10 +42,15 @@ void ThirdNumber(int num)
         length++;
     }
 
+    //Console.Write("Введите искомую цифру: ");
+    //int searchNum = Convert.ToInt32(Console.ReadLine());
+    //int stepen = length - searchNum; - так можно найти любую цифру в числе.
     int stepen = length - 3;
+    
     if(stepen < 0)
     {
         Console.Write("Третьей цифры нет!");
+        //Console.Write("В этом числе нет столько цифр!");
     }
     else
     {
@@ -54,10 +59,11 @@ void ThirdNumber(int num)
     }
 }
 
-Console.Write("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+//Console.Write("Введите число: ");
+//int num = Convert.ToInt32(Console.ReadLine());
+int num = 645; //Согласно условию задачи, число задано изначально.
 ThirdNumber(num);
-*/
+
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру,
@@ -66,7 +72,6 @@ ThirdNumber(num);
 6 -> да
 7 -> да
 1 -> нет
-*/
 
 void WeekNumber(int num)
 {
@@ -83,3 +88,4 @@ void WeekNumber(int num)
 Console.Write("Введите день недели: ");
 int num = Convert.ToInt32(Console.ReadLine());
 WeekNumber(num);
+*/
