@@ -30,7 +30,7 @@ SecondNumber(num);
 78 -> третьей цифры нет
 
 32679 -> 6
-*/
+
 
 void ThirdNumber(int num)
 {
@@ -63,7 +63,7 @@ void ThirdNumber(int num)
 //int num = Convert.ToInt32(Console.ReadLine());
 int num = 645; //Согласно условию задачи, число задано изначально.
 ThirdNumber(num);
-
+*/
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру,
@@ -72,20 +72,27 @@ ThirdNumber(num);
 6 -> да
 7 -> да
 1 -> нет
+*/
 
 void WeekNumber(int num)
 {
-    if(num > 5)
+    if(num > 7 || num < 1)
     {
-        Console.Write("Да");
+        Console.WriteLine("Неверный номер дня!"); 
     }
     else
     {
-        Console.Write("Нет");
+        if(num > 5)
+        {
+            Console.Write("Выходной день");
+        }
+        else
+        {
+            Console.Write("Будний день");
+        }
     }
 }
 
 Console.Write("Введите день недели: ");
 int num = Convert.ToInt32(Console.ReadLine());
 WeekNumber(num);
-*/
