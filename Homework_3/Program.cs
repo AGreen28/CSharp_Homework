@@ -28,7 +28,7 @@ Palindrome(number);
 Напишите программу, которая принимает на вход координаты двух точек
 и находит расстояние между ними в 3D пространстве.
 A (3,6,8); B (2,1,-7), -> 15.84
-A (7,-5, 0); B (1,-1,9) -> 11.53 */
+A (7,-5, 0); B (1,-1,9) -> 11.53 
 
 double FindLength(double xA, double yA, double zA, double xB, double yB, double zB)
 {
@@ -50,9 +50,27 @@ Console.Write("Ведите zB: ");
 double zB = Convert.ToDouble(Console.ReadLine());
 double result = FindLength(xA, yA, zA, xB, yB, zB);
 Console.WriteLine("Расстояние равно: " + result);
+*/
 
 /* Задача 23
 Напишите программу, которая принимает на вход число (N)
 и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125 */
+
+void CubeTable(int num)
+{
+    int i = 1;
+    while(i <= num)
+    {
+        Console.Write(i * i * i + " ");
+        i++;
+    }
+}
+
+Console.Write("Ведите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number > 0)
+    CubeTable(number);
+else
+    Console.WriteLine("Введите положительное число!");
