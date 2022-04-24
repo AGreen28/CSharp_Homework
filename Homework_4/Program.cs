@@ -88,9 +88,9 @@ EvenPositionSum(myArray);
 [3 7 22 2 78] -> 76
 */
 
-/*int[] CreateRandomArray(int size, int min, int max)
+/*double[] CreateRandomArray(int size, int min, int max)
 {
-    int[] array = new int[size];
+    double[] array = new double[size];
 
     for(int i = 0; i < size; i++)
     {
@@ -100,20 +100,20 @@ EvenPositionSum(myArray);
     return array;
 }*/
 
-int[] CreateArray(int size)
+double[] CreateArray(int size)
 {
-    int[] array = new int[size];
+    double[] array = new double[size];
 
     for(int i = 0; i < size; i++)
     {
         Console.Write("Введите " + i + " элемент: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        array[i] = Convert.ToDouble(Console.ReadLine());
     }
 
     return array;
 }
 
-void ShowArray(int[] array)
+void ShowArray(double[] array)
 {
     for(int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
@@ -121,10 +121,10 @@ void ShowArray(int[] array)
     Console.WriteLine();
 }
 
-void MinMaxDifference(int[] array)
+void MinMaxDifference(double[] array)
 {
-    int maxNumber = array[0];
-    int minNumber = array[0];
+    double maxNumber = array[0];
+    double minNumber = array[0];
 
     for(int i = 0; i < array.Length; i++)
     {
@@ -136,7 +136,7 @@ void MinMaxDifference(int[] array)
     Console.WriteLine("Разница между max и  min: " + (maxNumber - minNumber));
 }
 
-//int[] myArray = CreateRandomArray(5, 0, 100);
-int[] myArray = CreateArray(5);
+//double[] myArray = CreateRandomArray(5, 0, 100);
+double[] myArray = CreateArray(5);
 ShowArray(myArray);
 MinMaxDifference(myArray);
