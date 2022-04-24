@@ -44,7 +44,7 @@ CountEven(myArray);
 Найдите сумму элементов, стоящих на нечётных позициях.
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0
-*/
+
 
 int[] CreateRandomArray(int size, int min, int max)
 {
@@ -81,8 +81,62 @@ void EvenPositionSum(int[] array)
 int[] myArray = CreateRandomArray(4, -100, 100);
 ShowArray(myArray);
 EvenPositionSum(myArray);
+*/
 
 /*Задача 38: Задайте массив вещественных чисел.
 Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76
 */
+
+/*int[] CreateRandomArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(min, max+1);
+    }
+
+    return array;
+}*/
+
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        Console.Write("Введите " + i + " элемент: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+
+    Console.WriteLine();
+}
+
+void MinMaxDifference(int[] array)
+{
+    int maxNumber = array[0];
+    int minNumber = array[0];
+
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] > maxNumber)
+            maxNumber = array[i];
+        if(array[i] < minNumber)
+            minNumber = array[i];
+    }
+    Console.WriteLine("Разница между max и  min: " + (maxNumber - minNumber));
+}
+
+//int[] myArray = CreateRandomArray(5, 0, 100);
+int[] myArray = CreateArray(5);
+ShowArray(myArray);
+MinMaxDifference(myArray);
