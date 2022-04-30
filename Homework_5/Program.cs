@@ -25,7 +25,7 @@ Exponent(numberA, numberB);
 452 -> 11
 82 -> 10
 9012 -> 12
-*/
+
 
 void SumOfNumbers(int num)
 {
@@ -41,8 +41,39 @@ void SumOfNumbers(int num)
 Console.Write("Ведите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 SumOfNumbers(number);
+*/
 
 /*Задача 3: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33]
 */
+
+int[] CreateRandomArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(min, max+1);
+    }
+    
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+
+    Console.WriteLine();
+}
+
+
+Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine()); // int size = 8; - по условиям задачи
+Console.Write("Введите минимальный элемент массива: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите максимальный элемент массива: ");
+int max = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreateRandomArray(size, min, max);
+ShowArray(myArray);
