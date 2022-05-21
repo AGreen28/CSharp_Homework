@@ -36,7 +36,7 @@ void PrintArray(int[,] matrix)
 1 2 4 7
 2 3 5 9
 2 4 4 8
-*/
+
 
 int[,] SortNumsInString(int[,] array)
 {
@@ -64,6 +64,7 @@ Console.Write("Введите количество столбцов: ");
 int length = Convert.ToInt32(Console.ReadLine());
 
 PrintArray(SortNumsInString(CreateArray(height, length)));
+*/
 
 /*Задача 56: Задайте прямоугольный двумерный массив. Напишите программу,
 которая будет находить строку с наименьшей суммой элементов.
@@ -75,6 +76,44 @@ PrintArray(SortNumsInString(CreateArray(height, length)));
 Программа считает сумму элементов в каждой строке
 и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 */
+int[] SumNumInString(int[,] array)
+{
+    int[] sumOfStrings = new int[array.GetLength(0)];
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        int sum = 0;
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            sum = sum + array[i, j]; 
+        }
+        sumOfStrings[i] = sum;
+        //Console.Write(sumOfStrings[i] + " ");
+    }
+    //Console.WriteLine();
+    return sumOfStrings;
+}
+
+void MinString(int[] array)
+{
+    int min = array[0];
+    int minIndex = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] < min)
+        {
+            min = array[i];
+            minIndex = i;
+        }
+    }
+    Console.WriteLine("Наименьшая сумма элементов в строке " + (minIndex + 1));
+}
+
+Console.Write("Введите количество строк: ");
+int height = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int length = Convert.ToInt32(Console.ReadLine());
+
+MinString(SumNumInString(CreateArray(height, length)));
 
 /*Задача 62. Заполните спирально массив 4 на 4.
 Например, на выходе получается вот такой массив:
