@@ -75,7 +75,7 @@ PrintArray(SortNumsInString(CreateArray(height, length)));
 5 2 6 7
 Программа считает сумму элементов в каждой строке
 и выдаёт номер строки с наименьшей суммой элементов: 1 строка
-*/
+
 int[] SumNumInString(int[,] array)
 {
     int[] sumOfStrings = new int[array.GetLength(0)];
@@ -114,6 +114,7 @@ Console.Write("Введите количество столбцов: ");
 int length = Convert.ToInt32(Console.ReadLine());
 
 MinString(SumNumInString(CreateArray(height, length)));
+*/
 
 /*Задача 62. Заполните спирально массив 4 на 4.
 Например, на выходе получается вот такой массив:
@@ -122,3 +123,45 @@ MinString(SumNumInString(CreateArray(height, length)));
 11 16 15 6
 10 9 8 7
 */
+
+Console.Write("Введите количество строк: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+int[,] array = new int[n,m];
+int k = 1;
+int i, j;
+int a = 0;
+int b = 0;
+int c = n;
+int d = m;
+
+while(k <= n * m)
+{
+    for(i = a, j = b; j < d; j++)
+    {
+        array[i,j] = k;
+        k++;
+    }
+    for(i = a + 1, j = d - 1; i < c; i++)
+    {
+        array[i,j] = k;
+        k++;
+    }
+    for(i = c - 1, j = d - 2; j >= b; j--)
+    {
+        array[i,j] = k;
+        k++;
+    }
+    for(i = c - 2, j = b; i > a; i--)
+    {
+        array[i,j] = k;
+        k++;
+    }
+    a++;
+    b++;
+    c--;
+    d--;
+}
+PrintArray(array);
