@@ -2,7 +2,6 @@
 которая найдёт сумму натуральных элементов в промежутке от M до N.
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30
-*/
 
 int SumNums(int a, int b)
 {
@@ -21,38 +20,22 @@ Console.Write("Введите второе значение: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(SumNums(n, m));
-
-/*int sum = 0;
-if(n < m)
-{
-    while(n <= m)
-    {
-    sum = sum + n;
-    n++;
-    }
-}
-else
-    while(m <= n)
-    {
-    sum = sum + m;
-    m++;
-    }
-Console.WriteLine(sum);
 */
 
 /*Задача 67: Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
 453 -> 12
 45 -> 9
+*/
 
+int SumOfNums(int num)
+{
+    if(num == 0)
+        return 0;
+    else
+        return num % 10 + SumOfNums(num / 10);
+}
 
 Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int sum = 0;
-while(num > 0)
-{
-    sum = sum + num % 10;
-    num = num / 10;
-}
-Console.WriteLine(sum);
-*/
+Console.WriteLine(SumOfNums(num));
